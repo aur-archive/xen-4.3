@@ -1,0 +1,11 @@
+--- xen-4.4.0/Config.mk.orig	2014-04-29 20:54:43.117010822 +0100
++++ xen-4.4.0/Config.mk	2014-04-29 20:58:23.100055325 +0100
+@@ -188,6 +188,8 @@
+ CFLAGS += -std=gnu99
+ 
+ CFLAGS += -Wall -Wstrict-prototypes
++# add temporary build flags to identify build issues using gcc 4.9.0
++CFLAGS += -Wno-error=maybe-uninitialized
+ 
+ # Clang complains about macros that expand to 'if ( ( foo == bar ) ) ...'
+ # and is over-zealous with the printf format lint
